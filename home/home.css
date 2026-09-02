@@ -1,4 +1,3 @@
-
 /*CABEÇALHO*/
 
 a {
@@ -18,17 +17,19 @@ a {
     /*alinha no sentido contrario do flex*/
     align-items: center;
     padding: 0 120px;
-    height: 10vh; /*10% da visualização vertical do dispositivo/navegador*/
+    height: 10vh;
+    /*10% da visualização vertical do dispositivo/navegador*/
 }
 
 .navegacao {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 59px;
 }
 
 .navegacao a {
-    text-transform: uppercase; /*para deixar as letras da navegação em maiusculo*/
+    text-transform: uppercase;
+    /*para deixar as letras da navegação em maiusculo*/
 
     /*1rem -> equivale a 16px (padrão da raiz do HTML)*/
     /*em -> pega o tamanho da tipografia do elemento pai*/
@@ -67,7 +68,7 @@ a {
 
 .texto-banner p {
     font-size: 1.5em;
-    width: 50%;
+    width: 60%;
 }
 
 .botao {
@@ -81,7 +82,8 @@ a {
     font-weight: 700;
 }
 
-.botao:hover { /*efeito de passar a mão por cima*/
+.botao:hover {
+    /*efeito de passar a mão por cima*/
     background-color: #2AB2AB;
     color: var(--branco);
 }
@@ -89,4 +91,131 @@ a {
 .banner-principal img {
     align-self: flex-end;
     width: 35%;
+}
+
+/* Tíyulo das seções */
+
+.titulo-secao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo-secao h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.titulo-secao span {
+    display: flex;
+    width: 250px;
+    height: 4px;
+    background-color: var(--cor-destaque);
+}
+
+/* Seção Benefícios */
+
+.beneficios {
+    padding: 50px 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+.beneficios-lista {
+    display: grid;
+    grid-template-columns: repeat(3, 20%);
+    gap: 10%;
+    justify-content: center;
+}
+
+.beneficio {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 80px 20px 50px;
+    /*em cima -> direita e esquerda -> embaixo*/
+    border: 1px solid var(--azul-escuro);
+    border-radius: 30px;
+    box-shadow: 2px 5px 30px rgba(0, 0, 0, 0.25);
+    /* x -> y -> blur (desfoque) -> cor com transparência */
+
+    text-align: center;
+
+    /* Cria referência de posicionamento para o ícone, quando o ícone for posicionado, usa esse card como referência */
+    /* sem isso, o círculo poderia usar outro elemento da página como referência e sair passando pelo layout. */
+    position: relative;
+}
+
+.beneficios-lista img {
+    width: 50%;
+}
+
+.beneficio-icone {
+    border: 4px solid var(--cor-destaque);
+    background-color: var(--branco);
+
+    border-radius: 50%;
+    width: 30%;
+    height: 30%;
+
+    /* Retira o ícone do fluxo normal, com o absolute ele pode ficar por cima do card */
+    position: absolute;
+
+    /* Move o elemento para cima, o valor negativo faz ele sair parcialmente do card */
+    top: -15%;
+
+    /* Coloca o começo do elemento em 50% da largura do card */
+    left: 50%;
+
+    /* Ajustamos o posicionameno do elemento, mas a borda esquerda do círculo fica no centro, não o círculo inteiro */
+    transform: translateX(-50%);
+
+    display: grid;
+
+    /* place-items: center; é a mesma coisa que colocar: 
+    align-items: center; e justify-items: center */
+    place-items: center;
+}
+
+.beneficio h3 {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    width: 90%;
+}
+
+.beneficio p {
+    font-size: 1em;
+    width: 80%;
+}
+
+.banner-meio {
+    height: 60vh;
+    background-image: url(../imgs/Banner\ centro.svg);
+    background-size: cover;
+
+    display: flex;
+    justify-content: flex-end;
+
+    padding: 0 120px;
+    color: var(--branco);
+}
+
+#escola {
+    width: 192px;
+
+}
+
+.top-livros {
+    padding: 50px 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
 }

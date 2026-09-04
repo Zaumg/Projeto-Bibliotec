@@ -230,22 +230,12 @@ a {
 
 .escola h3 {
     display: grid;
-    margin: 10px;
-    justify-content: center;
-    align-items: baseline;
-
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 10px;
+    grid-template-columns: 210px 2fr;
 }
 
 .escola h4 {
     display: grid;
     grid-template-columns: 100px 4fr;
-
-    text-align: center;
-    font-size: 0.8em;
-    font-weight: 500;
 
 }
 
@@ -265,7 +255,7 @@ a {
 
 .filhas h3 {
     display: grid;
-    grid-template-columns: 200px 2fr;
+    grid-template-columns: 210px 2fr;
 }
 
 .filhas h4 {
@@ -289,7 +279,7 @@ a {
 
 .ti h3 {
     display: grid;
-    grid-template-columns: 200px 2fr;
+    grid-template-columns: 210px 2fr;
 }
 
 .ti h4 {
@@ -313,7 +303,7 @@ a {
 
 .mestres h3 {
     display: grid;
-    grid-template-columns: 200px 2fr;
+    grid-template-columns: 210px 2fr;
 }
 
 .mestres h4 {
@@ -328,19 +318,50 @@ a {
 
 /* ---- footer ---- */
 
-.footer {
+footer {
     background-color: var(--azul-escuro);
-    border: none;
-    color: #FFFFFF;
+    color: var(--branco);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-    padding: 50 120px;
-    height: 30vh;
+    padding: 60px 120px;
+    gap: 20px
 }
 
-.esquerdo {
+footer span {
+    height: 2px;
+    background-color: var(--branco);
+    width: 100%;
 
 }
 
-.senai {
+.superior {
+    display: flex;
+    justify-content: space-between;
 
+}
+
+.lado-direito {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 50px 100px;
+    
+}
+
+.lado-esquerdo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.inferior,
+.informacoes {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.lado-direito h2{
+    color: var(--cor-destaque);
 }

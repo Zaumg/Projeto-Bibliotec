@@ -232,3 +232,11 @@ input[type="checkbox"]:checked::after {
     font-size: 0.8em;
     font-weight: 700;
 }
+
+.status {
+    color: #be0404;
+}
+
+.status-retirado {
+    color: #11b802;
+}

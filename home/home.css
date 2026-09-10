@@ -207,113 +207,47 @@ a {
     color: var(--branco);
 }
 
+/* ACERVO */
 
-#escola {
-    width: 192px;
+.acervo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    gap: 100px;
+    padding: 50px 120px;
+}
+
+.livros {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: center;
+    gap: 5%;
+}
+
+.livro {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    text-align: center;
+}
+
+.livro img {
     height: 300px;
-
 }
 
-.top-livros {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 50px;
-}
-
-.escola {
-    display: grid;
-    justify-content: center;
-    margin: 10px;
-
-}
-
-
-.escola h3 {
-    display: grid;
-    grid-template-columns: 210px 2fr;
-}
-
-.escola h4 {
-    display: grid;
-    grid-template-columns: 100px 4fr;
-
-}
-
-.escola p {
+.livro h3 {
+    text-transform: uppercase;
     font-size: 1em;
-    width: 80%;
+    width: 65%;
 }
 
-.filhas {
-    display: grid;
-
-    margin: 10px;
-    margin-bottom: 10px;
-    justify-content: center;
-    align-items: center;
-}
-
-.filhas h3 {
-    display: grid;
-    grid-template-columns: 210px 2fr;
-}
-
-.filhas h4 {
-    display: grid;
-    grid-template-columns: 100px 4fr;
-}
-
-.filhas p {
-    font-size: 1em;
-    width: 80%;
-}
-
-.ti {
-    display: grid;
-
-    margin: 10px;
-    margin-bottom: 10px;
-    justify-content: center;
-    align-items: center;
-}
-
-.ti h3 {
-    display: grid;
-    grid-template-columns: 210px 2fr;
-}
-
-.ti h4 {
-    display: grid;
-    grid-template-columns: 100px 4fr;
-}
-
-.ti p {
-    font-size: 1em;
-    width: 80%;
-}
-
-.mestres {
-    display: grid;
-
-    margin: 10px;
-    margin-bottom: 10px;
-    justify-content: center;
-    align-items: center;
-}
-
-.mestres h3 {
-    display: grid;
-    grid-template-columns: 210px 2fr;
-}
-
-.mestres h4 {
-    display: grid;
-    grid-template-columns: 100px 4fr;
-}
-
-.mestres p {
-    font-size: 1em;
-    width: 80%;
+.livro-texto {
+    font-size: 0.8em;
 }
 
 /* ---- footer ---- */
@@ -345,8 +279,8 @@ footer span {
 .lado-direito {
     display: grid;
     grid-template-columns: 1fr auto;
-    gap: 50px 100px;
-    
+    gap: 60px 100px;
+
 }
 
 .lado-esquerdo {
@@ -362,6 +296,227 @@ footer span {
     gap: 20px;
 }
 
-.lado-direito h2{
+.lado-direito h2 {
     color: var(--cor-destaque);
+}
+
+
+/* RESPONSIVIDADE */
+.botao-menu {
+    display: none;
+    /*esconde o elemento*/
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.botao-menu i {
+    font-size: 2em;
+
+    color: var(--branco);
+    border-radius: 10px;
+}
+
+/* RESPONSIVIDADE COM TAMANHOS -> MEDIA QUERY
+vai aplicar a estilização especiica de acordo com os tamanhos */
+
+@media (max-width: 1024px) {
+
+    /* até no maximo de 1024 a tela vai se ajustar */
+    html {
+        font-size: 12px;
+    }
+
+    .cabecalho img {
+        width: 60%;
+    }
+
+    .texto-banner h1 {
+        text-align: center;
+    }
+
+    /* BENEFICIOS */
+    .beneficios {
+        gap: 50px;
+        padding: 30px 0;
+        overflow: hidden;
+    }
+
+    .beneficios-lista {
+        grid-template-columns: repeat(3, 30%);
+
+        overflow-x: scroll;
+        /*permite que o objeto role para o lado */
+
+        padding: 50px 20px;
+
+        justify-content: flex-start;
+    }
+
+    .beneficios-lista::-webkit-scrollbar {
+        display: none;
+    }
+
+    .beneficios {
+        padding: 80px 10px 50px;
+    }
+
+    .beneficios h3 {
+        margin-bottom: 25px;
+        width: 60%;
+    }
+
+    .beneficio p {
+        width: 60%;
+    }
+
+    /* BANNER MEIO */
+    .banner-meio {
+        background-position: center;
+        padding: 0 30px;
+    }
+
+    .banner-meio .texto-banner {
+        align-items: flex-end;
+    }
+
+    .banner-meio .texto-banner p {
+        text-align: right;
+    }
+
+    /* ACERVO */
+    .beneficios {
+        padding: 70px 40px;
+        gap: 50px;
+    }
+
+    .livros {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+        gap: 40px 20px;
+    }
+
+
+    /* PARA QUEM USOU FLEX, COLOCAR NOS LIVROS
+        flex-wrap: wrap;
+    */
+    /* E NO article 
+        max-width: 100%
+    */
+
+    .livro img {
+        max-width: 100%;
+    }
+
+    .livro h3 {
+        font-size: 1.2em;
+    }
+
+    .livro-texto {
+        font-size: 1em;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .cabecalho {
+        padding: 0 40px;
+
+        position: relative;
+    }
+
+    .botao-menu {
+
+        /* faz o menu hamburguer apareçer novamente */
+        display: flex;
+    }
+
+    .navegacao {
+        background-color: var(--azul-escuro);
+
+        position: absolute;
+        /*distancia de 10 vh no topo*/
+        top: 10vh;
+
+        /* encosta na esquerda */
+        left: 0;
+
+        width: 100%;
+        height: auto;
+
+        padding: 40px;
+
+        border-radius: 0 0 30px;
+
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 20px;
+
+        /* só funciona com o position, quanto maior o z-index, mais pra cima o elemento fica */
+        z-index: 100;
+
+        display: none;
+    }
+
+    .navegacao.ativo {
+        display: flex;
+    }
+
+    /* BANNER PRINCIPAL */
+    .banner-principal {
+        height: 50vh;
+
+        padding: 30px 0 10px 0;
+
+        position: relative;
+    }
+
+    .banner-principal .texto-banner {
+        width: 100%;
+        height: 100%;
+
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .banner-principal .texto-banner h1 {
+        font-size: 2em;
+    }
+
+    .banner-principal .texto-banner p {
+        display: none;
+    }
+
+    .banner-principal img {
+        width: 40%;
+
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        z-index: 1;
+    }
+
+    .banner-principal .botao {
+        padding: 20px 40px;
+
+        font-size: 1.2em;
+        z-index: 2;
+    }
+
+    /* BENEFICIOS */
+    .beneficios-lista {
+        grid-template-columns: repeat(3, 45%);
+    }
+
+    .beneficio-icone img {
+        width: 40%;
+    }
+
+    /* BANNER DO MEIO */
+    .banner-meio .texto-banner {
+        display: none;
+    }
 }

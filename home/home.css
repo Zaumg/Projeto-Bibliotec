@@ -553,8 +553,9 @@ vai aplicar a estilização especiica de acordo com os tamanhos */
         padding: 50px 40px;
     }
 
-    .footer .main {
+    footer .main {
         flex-direction: column;
+
         gap: 100px;
     }
 
@@ -562,6 +563,7 @@ vai aplicar a estilização especiica de acordo com os tamanhos */
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+
         gap: 30px;
     }
 
@@ -577,7 +579,7 @@ vai aplicar a estilização especiica de acordo com os tamanhos */
         font-size: 1.5em;
     }
 
-    .footer, .footer-inferior {
+    .nav-footer a, .footer-inferior {
         font-size: 1.2em;
     }
 
